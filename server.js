@@ -8,8 +8,8 @@
 
 //require express in our app
 var express = require('express'),
-var bodyParser = require('body-parser');
-var db = require('./models')
+  bodyParser = require('body-parser');
+  db = require('./models')
 
 // generate a new express app and call it 'app'
 var app = express();
@@ -71,11 +71,19 @@ app.get('/', function (req, res) {
   res.sendFile('views/index.html' , { root : __dirname});
 });
 
-// get all books
+// // get all books
+// app.get('/api/books', function (req, res) {
+//   // send all books as JSON response
+//   console.log('books index');
+//   res.json(books);
+// });
+
 app.get('/api/books', function (req, res) {
   // send all books as JSON response
-  console.log('books index');
-  res.json(books);
+  db.Book.find(function(err, books){
+    if (err) { return console.log("index error: " + err); }
+    res.json(books);
+  });
 });
 
 // get one book
