@@ -8,7 +8,8 @@
 
 //require express in our app
 var express = require('express'),
-  bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
+var db = require('./models')
 
 // generate a new express app and call it 'app'
 var app = express();
@@ -25,29 +26,29 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //  DATA
 ///////////////////
 
-var books = [
-  {
-    _id: 15,
-    title: "The Four Hour Workweek",
-    author: "Tim Ferriss",
-    image: "https://s3-us-west-2.amazonaws.com/sandboxapi/four_hour_work_week.jpg",
-    release_date: "April 1, 2007"
-  },
-  {
-    _id: 16,
-    title: "Of Mice and Men",
-    author: "John Steinbeck",
-    image: "https://s3-us-west-2.amazonaws.com/sandboxapi/of_mice_and_men.jpg",
-    release_date: "Unknown 1937"
-  },
-  {
-    _id: 17,
-    title: "Romeo and Juliet",
-    author: "William Shakespeare",
-    image: "https://s3-us-west-2.amazonaws.com/sandboxapi/romeo_and_juliet.jpg",
-    release_date: "Unknown 1597"
-  }
-];
+// var books = [
+//   {
+//     _id: 15,
+//     title: "The Four Hour Workweek",
+//     author: "Tim Ferriss",
+//     image: "https://s3-us-west-2.amazonaws.com/sandboxapi/four_hour_work_week.jpg",
+//     release_date: "April 1, 2007"
+//   },
+//   {
+//     _id: 16,
+//     title: "Of Mice and Men",
+//     author: "John Steinbeck",
+//     image: "https://s3-us-west-2.amazonaws.com/sandboxapi/of_mice_and_men.jpg",
+//     release_date: "Unknown 1937"
+//   },
+//   {
+//     _id: 17,
+//     title: "Romeo and Juliet",
+//     author: "William Shakespeare",
+//     image: "https://s3-us-west-2.amazonaws.com/sandboxapi/romeo_and_juliet.jpg",
+//     release_date: "Unknown 1597"
+//   }
+// ];
 
 
 var newBookUUID = 18;
