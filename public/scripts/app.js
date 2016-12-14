@@ -2,6 +2,7 @@ console.log("Sanity Check: JS is working!");
 var template;
 var $booksList;
 var allBooks = [];
+var heyheyhey;
 
 $(document).ready(function(){
 
